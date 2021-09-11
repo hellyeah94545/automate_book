@@ -18,12 +18,12 @@ latest_month = sheet.cell(row=1, column=last_column).value
 # TODO: Check each member's payment status
 unpaid_members = {}
 for user in range(2, last_row + 1):
-    payment = sheet.cell(row=user, column=latest_month).value.lower()
+    payment = sheet.cell(row=user, column=last_column).value
     if payment != "paid":
-        for month in range(2, last_column):
-            if sheet.cell(row=user, column=month).value.lower() != "paid":
-                unpaid_members[sheet.cell(row=user, column=1).value] = sheet.cell(row=1, colume=month)
-
+        for month in range(2, last_column + 1):
+            name = sheet.cell(row=user, column=1).value
+            email = sheet.cell(row=user, column=2).value
+            unpaid_members[name] = email
 
 
 
