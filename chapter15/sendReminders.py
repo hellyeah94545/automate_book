@@ -15,7 +15,7 @@ last_column = sheet.max_column
 last_row = sheet.max_row
 latest_month = sheet.cell(row=1, column=last_column).value
 
-# TODO: Check each member's payment status
+# Check each member's payment status
 unpaid_members = {}
 for user in range(2, last_row + 1):
     payment = sheet.cell(row=user, column=last_column).value
@@ -25,7 +25,7 @@ for user in range(2, last_row + 1):
             email = sheet.cell(row=user, column=2).value
             unpaid_members[name] = email
 
-# TODO: Log in to email account
+# Log in to email account
 email_server = "smtp.gmail.com"
 sender_email = "hellyeah94545@gmail.com"
 sender_password = "ynliulpvyhkwyipd"
@@ -34,7 +34,7 @@ smtpObj.ehlo()
 smtpObj.starttls()
 smtpObj.login(sender_email, sender_password)
 
-# TODO: Send out reminder emails
+# Send out reminder emails
 
 for name, email in unpaid_members.items():
     body = "Subject: {0} dues unpaid. \nDear {1}, \n\nRecords show that you have not paid dues for {0}." \
