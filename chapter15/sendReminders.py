@@ -28,7 +28,7 @@ for user in range(2, last_row + 1):
 # Log in to email account
 email_server = "smtp.gmail.com"
 sender_email = "hellyeah94545@gmail.com"
-sender_password = "ynliulpvyhkwyipd"
+sender_password = input("Enter app password: ")
 smtpObj = smtplib.SMTP(email_server, 587)
 smtpObj.ehlo()
 smtpObj.starttls()
@@ -44,3 +44,6 @@ for name, email in unpaid_members.items():
     if send_mail_status != {}:
         print('There was a problem send email to {0}: {1}'.format(email, send_mail_status))
 smtpObj.close()
+
+# import textMyself
+# textMyself.textmyself("email script run finished")
